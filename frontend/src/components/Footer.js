@@ -1,11 +1,17 @@
 import React from 'react';
-import { Nav, NavItem, NavLink } from 'shards-react';
+import { Container, Row, Col } from 'shards-react';
 
 const Footer = () => {
   return (
-    <>
-      <h1>Footer</h1>
-    </>
+    <footer>
+      <Container>
+        <Row>
+          <Col className='text-center py-3'>
+            Copyright &copy; Khangadelic Shop
+          </Col>
+        </Row>
+      </Container>
+    </footer>
   );
 };
 
