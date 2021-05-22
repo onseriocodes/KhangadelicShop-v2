@@ -13,7 +13,9 @@ const Header = () => {
         collapseOnSelect
       >
         <Container>
-          <Navbar.Brand href='/'>KHANGADELIC</Navbar.Brand>
+          <Navbar.Brand id='brand' href='/'>
+            KHANGADELIC
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ml-auto'>
