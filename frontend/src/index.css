@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Wallpoet&display=swap");
 main {
   min-height: 80vh;
 }
 
 #brand {
-  font-family: 'Wallpoet', cursive;
+  font-family: "Wallpoet", cursive;
   font-size: large;
+  color: lightgreen;
 }
