@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import { RiShoppingCart2Line, RiUser2Line } from 'react-icons/ri';
 
 const Header = () => {
@@ -13,21 +14,26 @@ const Header = () => {
         collapseOnSelect
       >
         <Container>
-          <Navbar.Brand id='brand' href='/'>
-            KHANGADELIC
-          </Navbar.Brand>
+          <LinkContainer to='/'>
+            <Navbar.Brand id='brand'>KHANGADELIC</Navbar.Brand>
+          </LinkContainer>
+
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ml-auto'>
-              <Nav.Link href='/cart'>
-                {' '}
-                <RiShoppingCart2Line /> Cart
-              </Nav.Link>
-              <Nav.Link href='/login'>
-                {' '}
-                <RiUser2Line />
-                Sign In
-              </Nav.Link>
+              <LinkContainer to='/cart'>
+                <Nav.Link>
+                  {' '}
+                  <RiShoppingCart2Line />
+                </Nav.Link>
+              </LinkContainer>
+
+              <LinkContainer to='/login'>
+                <Nav.Link>
+                  {' '}
+                  <RiUser2Line /> Sign In
+                </Nav.Link>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>

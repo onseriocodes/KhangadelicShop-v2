@@ -1,10 +1,10 @@
 import React from 'react';
-import { FaRegStar, FaStarHalf, FaStar, FaStarHalfAlt } from 'react-icons/fa';
+import { FaRegStar, FaStarHalf, FaStar } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
 const Rating = ({ value, text, color }) => {
   return (
-    <div className='rating'>
+    <span className='rating'>
       <span>
         <i style={{ color }}>
           {value >= 1 ? (
@@ -59,10 +59,9 @@ const Rating = ({ value, text, color }) => {
             <FaRegStar />
           )}
         </i>
-      </span>
-
+      </span>{' '}
       <span>{text && text} </span>
-    </div>
+    </span>
   );
 };
 
