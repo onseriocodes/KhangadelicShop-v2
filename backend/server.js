@@ -1,31 +1,28 @@
-// SERVER.JS
+//! SERVER.JS
 import express from 'express';
 import dotenv from 'dotenv';
 import colors from 'colors';
+import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import connectDB from './config/db.js';
-import products from './data/products.js';
+
+// IMPORTED ROUTES:
+import productRoutes from './routes/productRoutes.js';
 
 dotenv.config();
-
 connectDB();
-
 const app = express();
 
-// ROUTE: ROOT
+// ROOT
 app.get('/', (req, res) => {
   res.send('API IS RUNNING...');
 });
 
-// ROUTE: GET ALL PRODUCTS
-app.get('/api/products', (req, res) => {
-  res.json(products);
-});
+// MOUTED ROUTES:
+app.use('/api/products', productRoutes);
 
-// ROUTE: GET SINGLE PRODUCT:
-app.get('/api/products/:id', (req, res) => {
-  const product = products.find(p => p._id === req.params.id);
-  res.json(product);
-});
+// CUSTOM ERROR MIDDLEWARE
+app.use(notFound);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
